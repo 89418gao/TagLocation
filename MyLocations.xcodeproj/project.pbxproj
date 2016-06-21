@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		B4012D201D1897C400B68AD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D1F1D1897C400B68AD8 /* main.m */; };
 		B4012D231D1897C400B68AD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D221D1897C400B68AD8 /* AppDelegate.m */; };
-		B4012D261D1897C400B68AD8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D251D1897C400B68AD8 /* FirstViewController.m */; };
+		B4012D261D1897C400B68AD8 /* CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D251D1897C400B68AD8 /* CurrentLocationViewController.m */; };
 		B4012D291D1897C400B68AD8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D281D1897C400B68AD8 /* SecondViewController.m */; };
 		B4012D2C1D1897C400B68AD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4012D2A1D1897C400B68AD8 /* Main.storyboard */; };
 		B4012D2E1D1897C400B68AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4012D2D1D1897C400B68AD8 /* Assets.xcassets */; };
 		B4012D311D1897C400B68AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4012D2F1D1897C400B68AD8 /* LaunchScreen.storyboard */; };
 		B4012D3C1D1897C400B68AD8 /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D3B1D1897C400B68AD8 /* MyLocationsTests.m */; };
 		B4012D471D1897C400B68AD8 /* MyLocationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D461D1897C400B68AD8 /* MyLocationsUITests.m */; };
+		B4012D551D18B16800B68AD8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4012D541D18B16800B68AD8 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +41,8 @@
 		B4012D1F1D1897C400B68AD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4012D211D1897C400B68AD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4012D221D1897C400B68AD8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B4012D241D1897C400B68AD8 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		B4012D251D1897C400B68AD8 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		B4012D241D1897C400B68AD8 /* CurrentLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationViewController.h; sourceTree = "<group>"; };
+		B4012D251D1897C400B68AD8 /* CurrentLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationViewController.m; sourceTree = "<group>"; };
 		B4012D271D1897C400B68AD8 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		B4012D281D1897C400B68AD8 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		B4012D2B1D1897C400B68AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		B4012D421D1897C400B68AD8 /* MyLocationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4012D461D1897C400B68AD8 /* MyLocationsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsUITests.m; sourceTree = "<group>"; };
 		B4012D481D1897C400B68AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4012D541D18B16800B68AD8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4012D551D18B16800B68AD8 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 		B4012D121D1897C400B68AD8 = {
 			isa = PBXGroup;
 			children = (
+				B4012D541D18B16800B68AD8 /* CoreLocation.framework */,
 				B4012D1D1D1897C400B68AD8 /* MyLocations */,
 				B4012D3A1D1897C400B68AD8 /* MyLocationsTests */,
 				B4012D451D1897C400B68AD8 /* MyLocationsUITests */,
@@ -106,8 +110,8 @@
 			children = (
 				B4012D211D1897C400B68AD8 /* AppDelegate.h */,
 				B4012D221D1897C400B68AD8 /* AppDelegate.m */,
-				B4012D241D1897C400B68AD8 /* FirstViewController.h */,
-				B4012D251D1897C400B68AD8 /* FirstViewController.m */,
+				B4012D241D1897C400B68AD8 /* CurrentLocationViewController.h */,
+				B4012D251D1897C400B68AD8 /* CurrentLocationViewController.m */,
 				B4012D271D1897C400B68AD8 /* SecondViewController.h */,
 				B4012D281D1897C400B68AD8 /* SecondViewController.m */,
 				B4012D2A1D1897C400B68AD8 /* Main.storyboard */,
@@ -212,6 +216,7 @@
 				TargetAttributes = {
 					B4012D1A1D1897C400B68AD8 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 72RV7AW66X;
 					};
 					B4012D361D1897C400B68AD8 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -277,7 +282,7 @@
 			files = (
 				B4012D291D1897C400B68AD8 /* SecondViewController.m in Sources */,
 				B4012D231D1897C400B68AD8 /* AppDelegate.m in Sources */,
-				B4012D261D1897C400B68AD8 /* FirstViewController.m in Sources */,
+				B4012D261D1897C400B68AD8 /* CurrentLocationViewController.m in Sources */,
 				B4012D201D1897C400B68AD8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,10 +424,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ggc.MyLocations;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shuyan.MyLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -430,10 +438,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ggc.MyLocations;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shuyan.MyLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -502,6 +513,7 @@
 				B4012D4D1D1897C400B68AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4012D4E1D1897C400B68AD8 /* Build configuration list for PBXNativeTarget "MyLocationsTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +522,7 @@
 				B4012D501D1897C400B68AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B4012D511D1897C400B68AD8 /* Build configuration list for PBXNativeTarget "MyLocationsUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +531,7 @@
 				B4012D531D1897C400B68AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
