@@ -17,6 +17,8 @@
 		B4012D3C1D1897C400B68AD8 /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D3B1D1897C400B68AD8 /* MyLocationsTests.m */; };
 		B4012D471D1897C400B68AD8 /* MyLocationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D461D1897C400B68AD8 /* MyLocationsUITests.m */; };
 		B4012D551D18B16800B68AD8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4012D541D18B16800B68AD8 /* CoreLocation.framework */; };
+		B40B8C391D1A77FD00F523A8 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B8C381D1A77FD00F523A8 /* LocationDetailsViewController.m */; };
+		B40B8C401D1BA8F100F523A8 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B8C3F1D1BA8F100F523A8 /* CategoryPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		B4012D461D1897C400B68AD8 /* MyLocationsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsUITests.m; sourceTree = "<group>"; };
 		B4012D481D1897C400B68AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4012D541D18B16800B68AD8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B40B8C371D1A77FD00F523A8 /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
+		B40B8C381D1A77FD00F523A8 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
+		B40B8C3E1D1BA8F100F523A8 /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
+		B40B8C3F1D1BA8F100F523A8 /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,10 @@
 				B4012D2F1D1897C400B68AD8 /* LaunchScreen.storyboard */,
 				B4012D321D1897C400B68AD8 /* Info.plist */,
 				B4012D1E1D1897C400B68AD8 /* Supporting Files */,
+				B40B8C371D1A77FD00F523A8 /* LocationDetailsViewController.h */,
+				B40B8C381D1A77FD00F523A8 /* LocationDetailsViewController.m */,
+				B40B8C3E1D1BA8F100F523A8 /* CategoryPickerViewController.h */,
+				B40B8C3F1D1BA8F100F523A8 /* CategoryPickerViewController.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -284,6 +294,8 @@
 				B4012D231D1897C400B68AD8 /* AppDelegate.m in Sources */,
 				B4012D261D1897C400B68AD8 /* CurrentLocationViewController.m in Sources */,
 				B4012D201D1897C400B68AD8 /* main.m in Sources */,
+				B40B8C401D1BA8F100F523A8 /* CategoryPickerViewController.m in Sources */,
+				B40B8C391D1A77FD00F523A8 /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
