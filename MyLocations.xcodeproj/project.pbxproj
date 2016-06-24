@@ -19,6 +19,8 @@
 		B4012D551D18B16800B68AD8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4012D541D18B16800B68AD8 /* CoreLocation.framework */; };
 		B40B8C391D1A77FD00F523A8 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B8C381D1A77FD00F523A8 /* LocationDetailsViewController.m */; };
 		B40B8C401D1BA8F100F523A8 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B8C3F1D1BA8F100F523A8 /* CategoryPickerViewController.m */; };
+		B40B8C421D1C843800F523A8 /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40B8C411D1C843800F523A8 /* KeyboardToolBar.xib */; };
+		B40B8C461D1C9A9F00F523A8 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B8C451D1C9A9F00F523A8 /* HudView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		B40B8C381D1A77FD00F523A8 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
 		B40B8C3E1D1BA8F100F523A8 /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
 		B40B8C3F1D1BA8F100F523A8 /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
+		B40B8C411D1C843800F523A8 /* KeyboardToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardToolBar.xib; sourceTree = "<group>"; };
+		B40B8C441D1C9A9F00F523A8 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
+		B40B8C451D1C9A9F00F523A8 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +132,11 @@
 				B4012D1E1D1897C400B68AD8 /* Supporting Files */,
 				B40B8C371D1A77FD00F523A8 /* LocationDetailsViewController.h */,
 				B40B8C381D1A77FD00F523A8 /* LocationDetailsViewController.m */,
+				B40B8C411D1C843800F523A8 /* KeyboardToolBar.xib */,
 				B40B8C3E1D1BA8F100F523A8 /* CategoryPickerViewController.h */,
 				B40B8C3F1D1BA8F100F523A8 /* CategoryPickerViewController.m */,
+				B40B8C441D1C9A9F00F523A8 /* HudView.h */,
+				B40B8C451D1C9A9F00F523A8 /* HudView.m */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40B8C421D1C843800F523A8 /* KeyboardToolBar.xib in Resources */,
 				B4012D311D1897C400B68AD8 /* LaunchScreen.storyboard in Resources */,
 				B4012D2E1D1897C400B68AD8 /* Assets.xcassets in Resources */,
 				B4012D2C1D1897C400B68AD8 /* Main.storyboard in Resources */,
@@ -294,6 +303,7 @@
 				B4012D231D1897C400B68AD8 /* AppDelegate.m in Sources */,
 				B4012D261D1897C400B68AD8 /* CurrentLocationViewController.m in Sources */,
 				B4012D201D1897C400B68AD8 /* main.m in Sources */,
+				B40B8C461D1C9A9F00F523A8 /* HudView.m in Sources */,
 				B40B8C401D1BA8F100F523A8 /* CategoryPickerViewController.m in Sources */,
 				B40B8C391D1A77FD00F523A8 /* LocationDetailsViewController.m in Sources */,
 			);

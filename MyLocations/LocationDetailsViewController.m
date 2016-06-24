@@ -8,6 +8,7 @@
 
 #import "LocationDetailsViewController.h"
 #import "CategoryPickerViewController.h"
+#import "HudView.h"
 
 @interface LocationDetailsViewController () <UITextViewDelegate, CategoryPickerDelegate>
 
@@ -38,8 +39,9 @@
 
 - (IBAction)done:(UIBarButtonItem *)sender {
     
-    NSLog(@"*** description: %@",_description);
-    [self closeScreen];
+    HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
+    hudView.text = @"Tagged";
+    [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
 }
 
 - (IBAction)cancel:(UIBarButtonItem *)sender {
@@ -59,21 +61,20 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)editFinish {
+-(IBAction)dismissKeyBoard {
     [_descriptionTextView resignFirstResponder];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyBoard)];
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.tableView addGestureRecognizer:tapRecognizer];
+    
 
     //创建keyboard top toolBar工具条
-    UIToolbar *topView = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
-    [topView setBarStyle:UIBarStyleDefault];
-
-    UIBarButtonItem *spaceBn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-
-    UIBarButtonItem *doneBn = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(editFinish)];
-    [topView setItems:@[spaceBn,doneBn]];
-    [_descriptionTextView setInputAccessoryView:topView];
+    UIToolbar *topBar = (UIToolbar *)[[[NSBundle mainBundle] loadNibNamed:@"KeyboardToolBar" owner:self options:nil] objectAtIndex:0];
+    [_descriptionTextView setInputAccessoryView:topBar];
     
     _descriptionTextView.text = _description;
     _categoryLabel.text = _category;
@@ -129,6 +130,20 @@
     }
     return 44;
 }
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.section == 0 || indexPath.section == 1) return indexPath;
+    return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(indexPath.row == 0 && indexPath.section == 0){
+        [_descriptionTextView becomeFirstResponder];
+    }
+}
+
+
 
 # pragma mark - UITextViewDelegate
 
