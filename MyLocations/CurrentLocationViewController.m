@@ -67,6 +67,7 @@
         
         locationDetailsVC.placemark = _placemark;
         locationDetailsVC.coordinate = _currentLocation.coordinate;
+        locationDetailsVC.managedObjectContext = self.managedObjectContext;
     }
 }
 
@@ -93,7 +94,6 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     CLLocation *newLocation = [locations lastObject];
-    NSLog(@"didUpdateLocations %@", newLocation);
     
     if([newLocation.timestamp timeIntervalSinceNow] < -5.0) return;
     if(newLocation.horizontalAccuracy < 0) return;

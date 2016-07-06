@@ -9,6 +9,7 @@
 #import "LocationDetailsViewController.h"
 #import "CategoryPickerViewController.h"
 #import "HudView.h"
+#import "Location.h"
 
 @interface LocationDetailsViewController () <UITextViewDelegate, CategoryPickerDelegate>
 
@@ -24,6 +25,7 @@
 @implementation LocationDetailsViewController {
     NSString *_description;
     NSString *_category;
+    NSDate *_date;
     
 }
 
@@ -32,6 +34,7 @@
     if(self){
         _description = @"";
         _category = @"No Category";
+        _date = [NSDate date];
     }
     return self;
 }
@@ -40,7 +43,29 @@
 - (IBAction)done:(UIBarButtonItem *)sender {
     
     HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
-    hudView.text = @"Tagged";
+    
+    
+    Location *location = nil;
+    if(_locationToEdit) {
+        hudView.text = @"Updated";
+        location = _locationToEdit;
+    }else{
+        hudView.text = @"Tagged";
+        location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    }
+
+    location.locationDescription = _description;
+    location.category = _category;
+    location.latitude = @(self.coordinate.latitude);
+    location.longitude = @(self.coordinate.longitude);
+    location.date = _date;
+    location.placemark = self.placemark;
+    
+    NSError *error;
+    if(![self.managedObjectContext save:&error]){
+        NSLog(@"Error when save : %@", error);
+        abort();
+    }
     [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
 }
 
@@ -67,6 +92,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if(_locationToEdit) {
+        self.title = @"Edit Location";
+    }
+    
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyBoard)];
     tapRecognizer.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:tapRecognizer];
@@ -78,6 +107,7 @@
     
     _descriptionTextView.text = _description;
     _categoryLabel.text = _category;
+    _dateLabel.text = [self formatDate:_date];
     
     _latitudeLabel.text = [NSString stringWithFormat:@"%.8f",_coordinate.latitude];
     _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", _coordinate.longitude];
@@ -161,5 +191,18 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+-(void)setLocationToEdit:(Location *)newLocation {
+    
+    if(_locationToEdit != newLocation) {
+        
+        _locationToEdit = newLocation;
+        _description = _locationToEdit.locationDescription;
+        _category = _locationToEdit.category;
+        _date = _locationToEdit.date;
+        
+        _placemark = _locationToEdit.placemark;
+        _coordinate = CLLocationCoordinate2DMake([_locationToEdit.latitude doubleValue], [_locationToEdit.longitude doubleValue]);
+    }
+}
 
 @end

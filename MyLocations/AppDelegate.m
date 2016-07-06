@@ -7,8 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreData/CoreData.h>
+#import "CurrentLocationViewController.h"
+#import "LocationsViewController.h"
+#import "MapViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic,strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,strong) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic,strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 
 @end
 
@@ -16,7 +25,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    CurrentLocationViewController *currentLocationVC = (CurrentLocationViewController *)tabBarController.viewControllers[0];
+    currentLocationVC.managedObjectContext = self.managedObjectContext;
+    
+    UINavigationController *navigationController = tabBarController.viewControllers[1];
+    LocationsViewController *locationVC = (LocationsViewController *)navigationController.viewControllers[0];
+    locationVC.managedObjectContext = self.managedObjectContext;
+    
+    
+    MapViewController *mapVC = (MapViewController *)tabBarController.viewControllers[2];
+    mapVC.managedObjectContext = self.managedObjectContext;
+
+    
     return YES;
 }
 
@@ -41,5 +63,53 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+-(NSManagedObjectModel *)managedObjectModel {
+    if(!_managedObjectModel){
+        NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"DataModel" ofType:@"momd"];
+        
+        NSURL *modelURL = [NSURL fileURLWithPath:modelPath];
+        _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+        
+    }
+    return _managedObjectModel;
+}
+-(NSString *)documentsDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths lastObject];
+}
+-(NSString *)dataStorePath{
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"DataStore.sqlite"];
+    
+}
+
+-(NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if(!_persistentStoreCoordinator) {
+        NSURL *storeURL = [NSURL fileURLWithPath:[self dataStorePath]];
+        
+        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+        
+        NSError *error;
+        if(![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]){
+            
+            NSLog(@"Error adding persistent store %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+    return _persistentStoreCoordinator;
+}
+-(NSManagedObjectContext *)managedObjectContext {
+    if(!_managedObjectModel){
+        NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
+        
+        if(coordinator) {
+            _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+            [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+        }
+    }
+    return _managedObjectContext;
+}
+
+
 
 @end
