@@ -12,7 +12,7 @@
 #import "Location.h"
 #import "LocationDetailsViewController.h"
 
-@interface MapViewController () <MKMapViewDelegate>
+@interface MapViewController () <MKMapViewDelegate,UINavigationBarDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
@@ -128,7 +128,7 @@
         
     }
     
-    const double extraSpace=1.1;
+    const double extraSpace=1.3;
     MKCoordinateRegion region;
     
     region.center.latitude = topLeft.latitude - (topLeft.latitude - bottomRight.latitude)/2;
@@ -168,6 +168,7 @@
     }
     UIButton *button = (UIButton *)[annotationView rightCalloutAccessoryView];
     button.tag = [_locations indexOfObject:(Location *)annotation];
+    annotationView.tintColor = [UIColor blueColor];
     
     return annotationView;
 }
@@ -186,6 +187,12 @@
         locationDetailVC.managedObjectContext = self.managedObjectContext;
     }
 }
+
+#pragma mark - UINavigationBarDelegate
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
+}
+
 
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

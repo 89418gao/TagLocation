@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
     
     _categories = @[
                     @"No Category",
@@ -74,6 +76,17 @@
         _selectedCategoryName = _categories[indexPath.row];
     }
     [_delegate categoryPicker:self didFinishSelect:_selectedCategoryName];
+}
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
+    UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
+    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    cell.selectedBackgroundView = selectionView;
 }
 
 @end

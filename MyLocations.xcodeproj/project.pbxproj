@@ -11,7 +11,6 @@
 		B4012D231D1897C400B68AD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D221D1897C400B68AD8 /* AppDelegate.m */; };
 		B4012D261D1897C400B68AD8 /* CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D251D1897C400B68AD8 /* CurrentLocationViewController.m */; };
 		B4012D2C1D1897C400B68AD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4012D2A1D1897C400B68AD8 /* Main.storyboard */; };
-		B4012D2E1D1897C400B68AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4012D2D1D1897C400B68AD8 /* Assets.xcassets */; };
 		B4012D311D1897C400B68AD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4012D2F1D1897C400B68AD8 /* LaunchScreen.storyboard */; };
 		B4012D3C1D1897C400B68AD8 /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D3B1D1897C400B68AD8 /* MyLocationsTests.m */; };
 		B4012D471D1897C400B68AD8 /* MyLocationsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B4012D461D1897C400B68AD8 /* MyLocationsUITests.m */; };
@@ -21,6 +20,10 @@
 		B40B8C421D1C843800F523A8 /* KeyboardToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40B8C411D1C843800F523A8 /* KeyboardToolBar.xib */; };
 		B40B8C461D1C9A9F00F523A8 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = B40B8C451D1C9A9F00F523A8 /* HudView.m */; };
 		B46BFE8E1D28D53900D6AD8E /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B46BFE8D1D28D53900D6AD8E /* LocationCell.m */; };
+		B4B920551D2DCF3E00155123 /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B920541D2DCF3E00155123 /* NSMutableString+AddText.m */; };
+		B4B920571D2F7B6000155123 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B920561D2F7B6000155123 /* AudioToolbox.framework */; };
+		B4B9205A1D2F7BA300155123 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = B4B920591D2F7BA300155123 /* Sound.caf */; };
+		B4B9205C1D2F7E4C00155123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B9205B1D2F7E4C00155123 /* Assets.xcassets */; };
 		B4DDDA491D2B5F0A0099EE88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DDDA481D2B5F0A0099EE88 /* MapKit.framework */; };
 		B4DDDA4C1D2B5FF60099EE88 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4DDDA4B1D2B5FF60099EE88 /* MapViewController.m */; };
 		B4FB98E51D25E4FA003B9397 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FB98E41D25E4FA003B9397 /* CoreData.framework */; };
@@ -55,7 +58,6 @@
 		B4012D241D1897C400B68AD8 /* CurrentLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationViewController.h; sourceTree = "<group>"; };
 		B4012D251D1897C400B68AD8 /* CurrentLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationViewController.m; sourceTree = "<group>"; };
 		B4012D2B1D1897C400B68AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B4012D2D1D1897C400B68AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4012D301D1897C400B68AD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4012D321D1897C400B68AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4012D371D1897C400B68AD8 /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,11 @@
 		B40B8C451D1C9A9F00F523A8 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		B46BFE8C1D28D53900D6AD8E /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		B46BFE8D1D28D53900D6AD8E /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		B4B920531D2DCF3E00155123 /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
+		B4B920541D2DCF3E00155123 /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
+		B4B920561D2F7B6000155123 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B4B920591D2F7BA300155123 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
+		B4B9205B1D2F7E4C00155123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4DDDA481D2B5F0A0099EE88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B4DDDA4A1D2B5FF60099EE88 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		B4DDDA4B1D2B5FF60099EE88 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4B920571D2F7B6000155123 /* AudioToolbox.framework in Frameworks */,
 				B4DDDA491D2B5F0A0099EE88 /* MapKit.framework in Frameworks */,
 				B4FB98E51D25E4FA003B9397 /* CoreData.framework in Frameworks */,
 				B4012D551D18B16800B68AD8 /* CoreLocation.framework in Frameworks */,
@@ -118,6 +126,9 @@
 		B4012D121D1897C400B68AD8 = {
 			isa = PBXGroup;
 			children = (
+				B4B920561D2F7B6000155123 /* AudioToolbox.framework */,
+				B4B920531D2DCF3E00155123 /* NSMutableString+AddText.h */,
+				B4B920541D2DCF3E00155123 /* NSMutableString+AddText.m */,
 				B4DDDA481D2B5F0A0099EE88 /* MapKit.framework */,
 				B4FB98E41D25E4FA003B9397 /* CoreData.framework */,
 				B4012D541D18B16800B68AD8 /* CoreLocation.framework */,
@@ -141,14 +152,15 @@
 		B4012D1D1D1897C400B68AD8 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				B4B920581D2F7BA300155123 /* Sound */,
 				B4012D211D1897C400B68AD8 /* AppDelegate.h */,
 				B4012D221D1897C400B68AD8 /* AppDelegate.m */,
 				B4012D241D1897C400B68AD8 /* CurrentLocationViewController.h */,
 				B4012D251D1897C400B68AD8 /* CurrentLocationViewController.m */,
 				B4012D2A1D1897C400B68AD8 /* Main.storyboard */,
-				B4012D2D1D1897C400B68AD8 /* Assets.xcassets */,
 				B4012D2F1D1897C400B68AD8 /* LaunchScreen.storyboard */,
 				B4012D321D1897C400B68AD8 /* Info.plist */,
+				B4B9205B1D2F7E4C00155123 /* Assets.xcassets */,
 				B4012D1E1D1897C400B68AD8 /* Supporting Files */,
 				B40B8C371D1A77FD00F523A8 /* LocationDetailsViewController.h */,
 				B40B8C381D1A77FD00F523A8 /* LocationDetailsViewController.m */,
@@ -196,6 +208,15 @@
 				B4012D481D1897C400B68AD8 /* Info.plist */,
 			);
 			path = MyLocationsUITests;
+			sourceTree = "<group>";
+		};
+		B4B920581D2F7BA300155123 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				B4B920591D2F7BA300155123 /* Sound.caf */,
+			);
+			name = Sound;
+			path = "../../../Downloads/The iOS Apprentice 3 - MyLocations/Resources/Sound";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +286,7 @@
 				TargetAttributes = {
 					B4012D1A1D1897C400B68AD8 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 72RV7AW66X;
+						DevelopmentTeam = 5K28WQ42UU;
 					};
 					B4012D361D1897C400B68AD8 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -304,8 +325,9 @@
 			files = (
 				B40B8C421D1C843800F523A8 /* KeyboardToolBar.xib in Resources */,
 				B4012D311D1897C400B68AD8 /* LaunchScreen.storyboard in Resources */,
-				B4012D2E1D1897C400B68AD8 /* Assets.xcassets in Resources */,
 				B4012D2C1D1897C400B68AD8 /* Main.storyboard in Resources */,
+				B4B9205A1D2F7BA300155123 /* Sound.caf in Resources */,
+				B4B9205C1D2F7E4C00155123 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +363,7 @@
 				B4FB98F11D27A0F4003B9397 /* LocationsViewController.m in Sources */,
 				B40B8C401D1BA8F100F523A8 /* CategoryPickerViewController.m in Sources */,
 				B46BFE8E1D28D53900D6AD8E /* LocationCell.m in Sources */,
+				B4B920551D2DCF3E00155123 /* NSMutableString+AddText.m in Sources */,
 				B40B8C391D1A77FD00F523A8 /* LocationDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,7 +509,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shuyan.MyLocations;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ggc.MyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -500,7 +523,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shuyan.MyLocations;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ggc.MyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

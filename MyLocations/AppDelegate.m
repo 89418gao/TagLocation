@@ -23,8 +23,16 @@
 
 @implementation AppDelegate
 
+-(void)customizeAppearance {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self customizeAppearance];
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     CurrentLocationViewController *currentLocationVC = (CurrentLocationViewController *)tabBarController.viewControllers[0];

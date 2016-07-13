@@ -11,6 +11,8 @@
 #import "Location.h"
 #import "LocationCell.h"
 #import "LocationDetailsViewController.h"
+#import "NSMutableString+AddText.h"
+
 
 
 @interface LocationsViewController () <NSFetchedResultsControllerDelegate>
@@ -51,6 +53,9 @@
     [self performFetch];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2];
+    
 }
 
 -(void)performFetch {
@@ -67,7 +72,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
@@ -82,7 +87,7 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     id<NSFetchedResultsSectionInfo> sectionInfo = [self fetchResultsController].sections[section];
-    return [sectionInfo name];
+    return [[sectionInfo name] uppercaseString];
     
 }
 
@@ -103,6 +108,7 @@
     
     if(editingStyle == UITableViewCellEditingStyleDelete) {
         Location *location = [[self fetchResultsController] objectAtIndexPath:indexPath];
+        [location removePhotoFile];
         [self.managedObjectContext deleteObject:location];
         
         NSError *error;
@@ -111,6 +117,25 @@
             return;
         }
     }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, tableView.sectionHeaderHeight - 14.0f, tableView.bounds.size.width-20, 14.0f)];
+    label.text = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
+    label.font = [UIFont boldSystemFontOfSize:11.0f];
+    label.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    label.backgroundColor = [UIColor clearColor];
+    
+    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(15, tableView.sectionHeaderHeight-0.5, tableView.bounds.size.width - 15, 0.5)];
+    separator.backgroundColor = tableView.separatorColor;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, tableView.sectionHeaderHeight)];
+    view.backgroundColor = [UIColor clearColor];
+    [view addSubview:separator];
+    [view addSubview:label];
+    
+    return view;
+    
 }
 
 -(void)configureCell:(UITableViewCell *)tableCell atIndexPath:(NSIndexPath *)indexPath {
@@ -125,10 +150,32 @@
     }
     
     if(location.placemark){
-        cell.addressLabel.text = [NSString stringWithFormat:@"%@ %@, %@", location.placemark.subThoroughfare,location.placemark.thoroughfare, location.placemark.locality];
+        NSMutableString *string = [NSMutableString string];
+        [string addText:location.placemark.subThoroughfare withSeparator:@""];
+        [string addText:location.placemark.thoroughfare withSeparator:@" "];
+        [string addText:location.placemark.locality withSeparator:@", "];
+        
+        cell.addressLabel.text = string;
     }else {
         cell.addressLabel.text = [NSString stringWithFormat:@"Lat: %.8f, Long: %.8f", [location.latitude doubleValue], [location.longitude doubleValue]];
     }
+
+    UIImage *image = [UIImage imageNamed:@"No Photo"];
+    if([location hasPhoto] && [location photoImage]){
+        image = [location photoImage];
+    }
+    
+    UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
+    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    cell.selectedBackgroundView = selectionView;
+    
+    
+    cell.photoImageView.layer.cornerRadius = cell.photoImageView.bounds.size.width / 2.0f;
+    cell.photoImageView.layer.masksToBounds = YES;
+    cell.photoImageView.clipsToBounds = YES;
+    cell.photoImageView.image = image;
+    cell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -169,7 +216,7 @@
             
         case NSFetchedResultsChangeUpdate:
             NSLog(@"*** NSFetchedResultsChangeUpdate (object)");
-            [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+           [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeMove:

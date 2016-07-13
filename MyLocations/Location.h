@@ -14,7 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Location : NSManagedObject <MKAnnotation>
 
-// Insert code here to declare functionality of your managed object subclass
++(NSInteger)nextPhotoId;
+
+-(BOOL)hasPhoto;
+-(NSString *)photoPath;
+-(UIImage *)photoImage;
+-(void)removePhotoFile;
 
 @end
 

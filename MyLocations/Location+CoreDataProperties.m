@@ -19,5 +19,6 @@
 @dynamic locationDescription;
 @dynamic category;
 @dynamic placemark;
+@dynamic photoId;
 
 @end

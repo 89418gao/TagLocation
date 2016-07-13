@@ -2,7 +2,7 @@
 //  Location+CoreDataProperties.h
 //  MyLocations
 //
-//  Created by Shuyan Guo on 7/1/16.
+//  Created by Shuyan Guo on 7/6/16.
 //  Copyright © 2016 GG. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -10,18 +10,18 @@
 //
 
 #import "Location.h"
-#import <CoreLocation/CoreLocation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Location (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *latitude;
-@property (nullable, nonatomic, retain) NSNumber *longitude;
-@property (nullable, nonatomic, retain) NSDate *date;
-@property (nullable, nonatomic, retain) NSString *locationDescription;
 @property (nullable, nonatomic, retain) NSString *category;
+@property (nullable, nonatomic, retain) NSDate *date;
+@property (nullable, nonatomic, retain) NSNumber *latitude;
+@property (nullable, nonatomic, retain) NSString *locationDescription;
+@property (nullable, nonatomic, retain) NSNumber *longitude;
 @property (nullable, nonatomic, retain) CLPlacemark *placemark;
+@property (nullable, nonatomic, retain) NSNumber *photoId;
 
 @end
 
